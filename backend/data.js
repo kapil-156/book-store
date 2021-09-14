@@ -1,0 +1,118 @@
+import bcrypt from 'bcryptjs';
+
+const data = {
+  users: [
+    {
+      name: 'kapil',
+      email: 'admin@example.com',
+      password: bcrypt.hashSync('1234', 8),
+      isAdmin: true,
+      isSeller: true,
+      seller: {
+        name: 'Tata',
+        logo: '/images/l2.png',
+        description: 'best seller',
+        rating: 4.5,
+        numReviews: 120,
+      },
+    },
+    {
+      name: 'John',
+      email: 'user@example.com',
+      password: bcrypt.hashSync('1234', 8),
+      isAdmin: false,
+      isSeller: true,
+      seller: {
+        name: 'Jathi Ratnalu',
+        logo: '/images/l4.jfif',
+        description: 'best seller',
+        rating: 4.5,
+        numReviews: 120,
+      },
+
+    },
+  ],
+ 
+     
+  products: [
+    {
+      name: 'The gate way to Modern Javascript',
+      category: 'Modern javascript',
+      image: '/images/im6.jfif',
+      price: 120,
+      countInStock: 10,
+      author: 'Albert',
+      rating: 4.5,
+      numReviews: 10,
+      description: 'modern javascript Gateway',
+     
+    },
+    {
+      name: 'learn with fsd handson',
+      category: 'full stack development',
+      image: '/images/fsd1.jfif',
+      price: 100,
+      countInStock: 20,
+      author: 'macgrill hill',
+      rating: 4.0,
+      numReviews: 10,
+      description: 'Best for begniners',
+    },
+    {
+      name: 'Node js Designs',
+      category: 'Node js',
+      image: '/images/im4.jfif',
+      price: 220,
+      countInStock: 0,
+      author: 'Mario',
+      rating: 4.8,
+      numReviews: 17,
+      description: 'a well understand for beginners',
+    },
+    {
+      name: 'React Quickly',
+      category: 'React',
+      image: '/images/im3.jpg',
+      price: 78,
+      countInStock: 15,
+      author: 'Azat Mazadin',
+      rating: 4.5,
+      numReviews: 14,
+      description: 'Build a full-stack web app with React, Redux, and GraphQL',
+    },
+    {
+      name: 'React Design and patterns and Best practices',
+      category: 'React',
+      image: '/images/im2.jpg',
+      price: 65,
+      countInStock: 5,
+     author: 'michelie',
+      rating: 4.5,
+      numReviews: 10,
+      description: 'Comprehensive look at building, testing, anti-patterns, and more.',
+    },
+    {
+      name: 'The Road to learn React',
+      category: 'React',
+      image: '/images/im1.jpg',
+      price: 139,
+      countInStock: 12,
+      author: 'Robin"',
+      rating: 4.5,
+      numReviews: 15,
+      description: 'Beautifully written and approachable guide to learning React and ES6',
+    },
+    {
+      name: 'Html and css',
+      category: 'Html and css',
+      image: '/images/im5.png',
+      price: 139,
+      countInStock: 12,
+      author: 'Archer',
+      rating: 4.5,
+      numReviews: 15,
+      description: 'description',
+    },
+  ],
+};
+export default data;
