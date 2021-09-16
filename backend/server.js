@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect( 'mongodb+srv://localhost/kapil1235', {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/kssd', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
