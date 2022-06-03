@@ -27,4 +27,29 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
+    - name: Amazon ECS "Deploy Task Definition" Action for GitHub Actions
+  # You may pin to the exact commit or the version.
+  # uses: aws-actions/amazon-ecs-deploy-task-definition@9c18d81893224634ac107b91720119c91c1d600e
+  uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+  with:
+    # The path to the ECS task definition file to register
+    task-definition: 
+    # The name of the ECS service to deploy to. The action will only register the task definition if no service is given.
+    service: # optional
+    # The name of the ECS service's cluster.  Will default to the 'default' cluster
+    cluster: # optional
+    # Whether to wait for the ECS service to reach stable state after deploying the new task definition. Valid value is "true". Will default to not waiting.
+    wait-for-service-stability: # optional
+    # How long to wait for the ECS service to reach stable state, in minutes (default: 30 minutes, max: 6 hours). For CodeDeploy deployments, any wait time configured in the CodeDeploy deployment group will be added to this value.
+    wait-for-minutes: # optional
+    # The path to the AWS CodeDeploy AppSpec file, if the ECS service uses the CODE_DEPLOY deployment controller. Will default to 'appspec.yaml'.
+    codedeploy-appspec: # optional
+    # The name of the AWS CodeDeploy application, if the ECS service uses the CODE_DEPLOY deployment controller. Will default to 'AppECS-{cluster}-{service}'.
+    codedeploy-application: # optional
+    # The name of the AWS CodeDeploy deployment group, if the ECS service uses the CODE_DEPLOY deployment controller. Will default to 'DgpECS-{cluster}-{service}'.
+    codedeploy-deployment-group: # optional
+    # A description of the deployment, if the ECS service uses the CODE_DEPLOY deployment controller.
+    codedeploy-deployment-description: # optional
+    # Whether to force a new deployment of the service. Valid value is "true". Will default to not force a new deployment.
+    force-new-deployment: # optional
   
